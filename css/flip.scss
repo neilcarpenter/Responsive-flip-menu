@@ -1,0 +1,513 @@
+/*!
+ *
+ * Check flip.scss for dev code
+ *
+ */
+
+// SETUPS
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	-webkit-font-smoothing: antialiased;
+}
+
+html, body {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "proxima-nova", sans-serif;
+	font-size: 1em;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 0 5%;
+}
+
+// TRANSITIONS
+
+h1,
+p a,
+footer a,
+.flip-menu {
+	-webkit-transition: all .3s ease-in-out;
+	   -moz-transition: all .3s ease-in-out;
+		 -o-transition: all .3s ease-in-out;
+			transition: all .3s ease-in-out;
+}
+
+// HEADER
+
+header {
+	width: 100%;
+	height: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../img/navy_blue.png);
+	background: -moz-linear-gradient(top, rgba(255,255,255,0.1) 0%, rgba(19,19,19,0.5) 100%), url(../img/navy_blue.png); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.1)), color-stop(100%,rgba(19,19,19,0.5))), url(../img/navy_blue.png); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(19,19,19,0.5) 100%), url(../img/navy_blue.png); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(19,19,19,0.5) 100%), url(../img/navy_blue.png); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0.1) 0%,rgba(19,19,19,0.5) 100%), url(../img/navy_blue.png); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%,rgba(19,19,19,0.5) 100%), url(../img/navy_blue.png); /* W3C */
+}
+
+.brand {
+	font-size: 1.5em;
+	font-weight: bold;
+	padding: 10px 0;
+	display: block;
+	float: left;
+
+	&:hover {
+		opacity: 0.7;
+	}
+}
+
+.flip-menu {
+	display: none;
+
+	position: absolute;
+	right: 5%;
+	top: 7px;
+	width: 30px;
+	height: 30px;
+	background: url(../img/menu-icon.png) no-repeat bottom center;
+	text-indent: -999px;
+
+	&.on {
+		background-position: center 5px;
+	}
+}
+
+// HEADINGS
+
+h1 {
+	font-size: 8em;
+	padding: 0.3em 0;
+	margin: 0;
+	background: rgba(0,0,0,0.1);
+
+	span {
+		display: block;
+		padding: 0 2em 0 0;
+		// color: rgba(0, 0, 0, 0.6);
+		// text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+		// color: #404040;
+		color: rgba(64, 64, 64, 0.9);
+		text-shadow: 5px 5px 0px rgba(93, 233, 255, 0.2),
+					 -5px -5px 0px rgba(237, 0, 49, 0.1);
+	}
+	.container {
+		padding: 0 30% 0 5%;
+	}
+}
+h2 {
+	font-size: 2em;
+	padding: 0.83em 0;
+	margin: 0;
+	background: rgba(0,0,0,0.05);
+
+	span {
+		display: block;
+		padding: 0 8em 0 0;
+		color: rgba(0, 0, 0, 0.6);
+		// text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+	}
+}
+
+// NAV
+
+nav {
+	position: absolute;
+	top: -50px;
+	right: 5%;
+	z-index: 3;
+
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		display: inline-block;
+	}
+
+	a {
+		font-size: 15px;
+		display: block;
+		padding: 15px 20px 17px;
+
+		&:hover {
+			background: rgba(0, 0, 0, 0.3);
+		}
+	}
+}
+
+// CONTENT
+
+.content {
+	margin-bottom: 2em;
+
+	a {
+		color: rgba(0, 0, 0, 0.5);
+		border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+
+		&:hover {
+			color: #000;
+			border-color: #000;
+		}
+	}
+
+	p {
+		line-height: 1.4;
+	}
+}
+
+.col-1,
+.col-2 {
+	width: 47%;
+}
+
+.col-1 {
+	float: left;
+
+	p:first-child {
+		font-size: 1.4em;
+		line-height: 1.4;
+	}
+}
+
+.col-2 {
+	float: right;
+}
+
+// FOOTER
+
+footer {
+	background: rgba(0, 0, 0, 0.01);
+	padding: 1em 0 2em;
+	border-top: 5px solid rgba(0, 0, 0, 0.05);	
+
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	
+		li {
+			margin: 0 0 5px;
+		}
+	}
+
+	small {
+		float: right;
+	}
+
+	a {
+		color: black;
+		border-bottom: 2px solid transparent;
+
+		&:hover {
+			border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+		}
+	}	
+}
+
+// 3D FLIP STUFF
+
+.front,
+.back {
+	-webkit-backface-visibility: hidden;
+	   -moz-backface-visibility: hidden;
+		 -o-backface-visibility: hidden;
+			backface-visibility: hidden;
+	position: absolute;
+	top: 50px;
+	left: 0;
+}
+
+.front {
+	z-index: 2;
+	background: white;
+}
+
+.back {
+
+	.container {
+		position: relative;
+	}
+}
+
+.flip-holder {
+	-webkit-perspective: 2000;
+	   -moz-perspective: 2000;
+		 -o-perspective: 2000;
+			perspective: 2000;
+}
+
+@-webkit-keyframes scale {
+	0%   {
+	 	-webkit-transform: scale(1) translate3d(0, 0, 0);
+	}
+	50%  {
+		-webkit-transform: scale(0.8) translate3d(0, 50px, 0);
+	}
+	100% {
+	 	-webkit-transform: scale(1) translate3d(0, 0, 0);
+	}
+}
+
+@-moz-keyframes scale {
+	0%   {
+	 	-moz-transform: scale(1) translate3d(0, 0, 0);
+	}
+	50%  {
+		-moz-transform: scale(0.8) translate3d(0, 50px, 0);
+	}
+	100% {
+	 	-moz-transform: scale(1) translate3d(0, 0, 0);
+	}
+}
+
+@-o-keyframes scale {
+	0%   {
+	 	-o-transform: scale(1) translate3d(0, 0, 0);
+	}
+	50%  {
+		-o-transform: scale(0.8) translate3d(0, 50px, 0);
+	}
+	100% {
+	 	-o-transform: scale(1) translate3d(0, 0, 0);
+	}
+}
+
+@keyframes scale {
+	0%   {
+	 	transform: scale(1) translate3d(0, 0, 0);
+	}
+	50%  {
+		transform: scale(0.8) translate3d(0, 50px, 0);
+	}
+	100% {
+	 	transform: scale(1) translate3d(0, 0, 0);
+	}
+}
+
+.flip-holder.flipping {
+	-webkit-animation: scale .6s ease-in-out;
+	   -moz-animation: scale .6s ease-in-out;
+		 -o-animation: scale .6s ease-in-out;
+			animation: scale .6s ease-in-out;
+}
+
+.flip-holder.flipped .flip {
+	-webkit-transform: rotateY(180deg);
+	   -moz-transform: rotateY(180deg);
+		 -o-transform: rotateY(180deg);
+			transform: rotateY(180deg);
+}
+
+.flip-holder, .front, .back {
+	width: 100%;
+}
+
+.flip {
+	-webkit-transition: -webkit-transform 0.6s ease-in-out;
+	   -moz-transition:    -moz-transform 0.6s ease-in-out;
+		 -o-transition: 	 -o-transform 0.6s ease-in-out;
+			transition:    		transform 0.6s ease-in-out;
+
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+		 -o-transform-style: preserve-3d;
+			transform-style: preserve-3d;
+
+	position: relative;
+}
+
+.flip-holder {
+
+	.front {
+		height: auto;
+	}
+
+	&.flipped.flipping .front {
+		height: auto;
+		overflow: visible;
+	}
+
+	&.flipped .front {
+		height: 0;
+		overflow: hidden;
+	}
+}
+
+// MEDIA QUERIFY
+
+@media (max-width: 980px) {
+
+	h1 {
+		font-size: 5em;
+
+		span {
+			text-shadow: 3px 3px 0px rgba(93, 233, 255, 0.2),
+						 -3px -3px 0px rgba(237, 0, 49, 0.1);			
+		}
+
+		.container {
+			padding: 0 5%;
+		}
+	}
+
+	h2 {
+		font-size: 1.5em;
+	}
+
+}
+
+@media (max-width: 760px) {
+
+	body {
+		background: url(../img/navy_blue.png) repeat;
+	}
+
+	.front,
+	.back {
+		top: 50px;
+	}
+
+	.back {
+		-webkit-transform: rotateY(180deg);
+		   -moz-transform: rotateY(180deg);
+			 -o-transform: rotateY(180deg);
+				transform: rotateY(180deg);
+	}
+
+	nav {
+		top: 0px;
+		right: 0;
+		width: 100%;
+		position: relative;
+		box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+		
+		li {
+			display: block;
+			text-align: center;
+		}
+
+		a {
+			background: #212121;
+			border-bottom: 5px solid #252525;
+
+			&:hover {
+				background: rgba(33, 33, 33, 0.5);
+			}
+		}
+	}
+
+	.flip-menu {
+		display: block;
+	}
+
+	.back .container {
+		padding: 0;
+	}
+
+}
+
+@media (max-width: 550px) {
+
+	.container {
+		padding: 0;
+	}
+
+	header {
+		padding: 0 5%;
+	}
+
+	h1 {
+		font-size: 3em;
+		padding-left: 5%;
+		padding-right: 5%;
+
+		span {
+			text-shadow: 2px 2px 0px rgba(93, 233, 255, 0.2),
+						 -2px -2px 0px rgba(237, 0, 49, 0.1);
+		}
+
+		.container {
+			padding: 0;
+		}		
+	}
+
+	h2 {
+		font-size: 1.1em;
+		padding-left: 5%;
+		padding-right: 5%;
+		
+		span {
+			padding: 0;
+		}
+	}
+
+	.content {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.col-1,
+	.col-2 {
+		width: 100%;
+		float: none;
+	}
+
+	footer {
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	// fork me ribbon
+	#ribbon {
+		display: none;
+	}
+
+}
+
+// HI DEF
+
+@media screen and (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 760px),
+	   screen and (-o-min-device-pixel-ratio: 3/2) and (max-width: 760px),
+	   screen and (min-device-pixel-ratio: 1.5) and (max-width: 760px) {
+	body {
+		background-image: url(../img/navy_blue_@2X.png);
+		-webkit-background-size: 600px 385px;
+		   -moz-background-size: 600px 385px;
+				background-size: 600px 385px;
+	}
+	.flip-menu {
+		background-image: url(../img/menu-icon_@2X.png);
+		-webkit-background-size: 25px 61px;
+		   -moz-background-size: 25px 61px;
+				background-size: 25px 61px;
+	}
+}
+
+/* clearfix helper */
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
